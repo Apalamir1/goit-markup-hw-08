@@ -116,9 +116,9 @@
     outline: none;
     margin-top: 20px;
     
-    width: 358px;
-    height: 50px;
     padding-left: 16px;
+    height: 50px;
+    
     color: var(--white-element);
     background-color: var(--bg-color-accent);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -129,8 +129,14 @@
     &:hover {
         border: 1px solid var(--hover-effect);
     }
+    @media screen and (max-width:767px) {
+        width: 450px;
+        margin: 0,15px;
+    }
         @media screen and (min-width:1200px) {
             margin-right: 12px;
+            width: 358px;
+            
         }
 }
 

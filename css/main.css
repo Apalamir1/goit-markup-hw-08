@@ -383,16 +383,22 @@ summary {
 }
 
 .hdr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   border-bottom: 1px solid #ECECEC;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
   .hdr {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    height: 60px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .hdr__navigation {
     display: -webkit-inline-box;
@@ -413,6 +419,11 @@ summary {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .hdr__position {
+    display: none;
+  }
+}
 @media screen and (min-width: 1200px) {
   .hdr__position {
     position: relative;
@@ -527,6 +538,66 @@ summary {
 
 .logo__particle {
   color: var(--focus-color);
+}
+
+/**hero**/
+.hero {
+  background: var(--bg-color-accent);
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+
+.overlay {
+  margin-left: auto;
+  margin-right: auto;
+  /*background-image: linear-gradient(to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)),
+      url(../images/hero-bg.jpg);*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media screen and (max-width: 767px) {
+  .overlay {
+    height: 400px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .overlay {
+    height: 600px;
+    max-width: 1600px;
+  }
+}
+
+.hero__text {
+  margin: 0 auto;
+  color: var(--white-element);
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 767px) {
+  .hero__text {
+    padding-top: 118px;
+    font-size: 26px;
+    line-height: 42px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero__text {
+    width: 696px;
+    font-size: 44px;
+    line-height: 60px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -651,6 +722,14 @@ summary {
 
 .team {
   background: var(--button-bg);
+}
+
+.team__foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .team__title {
@@ -950,9 +1029,8 @@ summary {
 .ftr__distribution__form {
   outline: none;
   margin-top: 20px;
-  width: 358px;
-  height: 50px;
   padding-left: 16px;
+  height: 50px;
   color: var(--white-element);
   background-color: var(--bg-color-accent);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -965,9 +1043,16 @@ summary {
 .ftr__distribution__form:focus, .ftr__distribution__form:hover {
   border: 1px solid var(--hover-effect);
 }
+@media screen and (max-width: 767px) {
+  .ftr__distribution__form {
+    width: 450px;
+    margin: 0, 15px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .ftr__distribution__form {
     margin-right: 12px;
+    width: 358px;
   }
 }
 
@@ -984,4 +1069,291 @@ summary {
 }
 .btn__position > svg {
   margin-left: 10px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal.is-hidden.modal__form {
+  -webkit-transform: translate(-50%, -50%) scale(0.9);
+          transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal__form {
+  position: absolute;
+  min-width: 450px;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+@media screen and (max-width: 767px) {
+  .modal__form {
+    margin-top: 94px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal__form {
+    min-width: 528px;
+  }
+}
+
+.modal__close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  height: 30px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFFFFF;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal__close-button:hover {
+  fill: var(--focus-color);
+  border: 1px solid var(--focus-color);
+}
+
+.modal__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.modal__item {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--font-color);
+}
+
+textarea {
+  resize: none;
+  width: auto;
+  border-radius: 4px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  padding-left: 16px;
+  padding-top: 12px;
+  outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  -webkit-transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+textarea:focus {
+  border: 1px solid var(--focus-color);
+}
+
+.modal__holder::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal__holder::-moz-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal__holder:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal__holder::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal__holder::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal__input {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal__position {
+  position: absolute;
+  left: 12px;
+  bottom: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  fill: var(--main-color);
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal__input-size:focus ~ .modal__position {
+  fill: var(--focus-color);
+}
+
+.modal__input-size {
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  padding-left: 42px;
+  outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  -webkit-transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal__input-size:focus {
+  border-color: var(--focus-color);
+}
+
+.modal__agreement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--font-color);
+}
+.modal__agreement--link {
+  text-decoration: underline;
+  color: var(--focus-color);
+}
+@media screen and (max-width: 767px) {
+  .modal__agreement {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal__agreement {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.modal__check-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.modal__check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.modal__check--imitation {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
+}
+.modal__check:checked + .modal__check--imitation {
+  background-image: url("../images/icon-check.svg");
+  background-size: contain;
+  background-color: var(--focus-color);
+  background-origin: border-box;
+  border-color: var(--focus-color);
+}
+
+.modal__button {
+  display: block;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
+  height: 50px;
+  background: var(--focus-color);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--white-element);
+  -webkit-transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal__button:hover, .modal__button:focus {
+  background: var(--hover-effect);
 }/*# sourceMappingURL=main.css.map */

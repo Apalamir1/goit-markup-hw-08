@@ -4,7 +4,7 @@
     @media screen and (min-width:1200px) {
         display: contents;
     }
-    padding-top: 0;
+    
 }
 
 .job__title {
@@ -20,6 +20,9 @@
 
 .job__photo {
     display: flex;
+    @media screen and (min-width:1200px) {
+        padding-bottom: 94px;
+    }
 }
 
 .job__photo__item {

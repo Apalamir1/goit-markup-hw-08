@@ -6,20 +6,26 @@
         justify-content: space-between;
         align-items: center;
     }
-    @media screen and ( min-width: 768px) {
-        
+    @media screen and (min-width:768px) {
+        height: 80px;
+            justify-content: space-between;
+                align-items: center;
     }
         border-bottom: 1px solid #ECECEC;
 }
 .hdr__navigation {
     
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 768px) {
         display: inline-flex;
         align-items: center;
     }
     
 }
 .hdr__contact {
+    @media screen and (min-width:768px) {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
     @media screen and (min-width: 1200px) {
             display: inline-flex;
             margin-left: auto;
@@ -30,14 +36,21 @@
 .hdr__position {
     @media screen and (max-width:767px) {
         display: none;}
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 768px) {
         position: relative;
 
-        .hdr__navigation &+&,
-        .hdr__contact &+& {
+        .hdr__navigation &+& {
             margin-left: 50px;
         }
+        .hdr__contact &+& {
+            margin-top:  10px;
+        }
     }   
+    @media screen and (min-width:1200px) {
+        .hdr__contact &+& {
+                margin-left: 50px;
+            }
+    }
 }
 
 .hdr__item {
@@ -46,13 +59,13 @@
     &:hover {
     color: var(--focus-color);
     }
-
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 768px) {
         display: block;
         padding-top: 32px;
         padding-bottom: 32px;
         color: var(--main-color);
     }
+
 }
 
 .hdr__item__effect {
@@ -94,6 +107,10 @@
     &:focus {
         color: var(--focus-color);
     }
+    @media screen and (min-width:768px) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     @media screen and (min-width: 1200px) {
             display: flex;
             align-items: center;
@@ -110,8 +127,12 @@
     .link__contact:focus & {
         fill: var(--focus-color);
     }
-    @media screen and (min-width:1200px) {
+    @media screen and (min-width:768px) {
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 8px;
     }
+        @media screen and (min-width:1200px) {
+            margin-right: 10px;
+        }
+        
 }

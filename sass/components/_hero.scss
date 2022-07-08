@@ -24,6 +24,10 @@
         height: 400px;
         width: auto;
     }
+        @media screen and (min-width:768px) {
+            height: 400px;
+            width: 768px;
+        }
     @media screen and (min-width:1200px) {
             height: 600px;
             max-width: 1600px;
@@ -40,11 +44,17 @@
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    @media screen and (max-width:767px) {
-        padding-top: 118px;
-            font-size: 26px;
-            line-height: 42px;
+    @media screen and (min-width:768px) {
+        padding-left: 189px;
+        padding-right: 189px;
     }
+
+    @media screen and (max-width:1199px) {
+        padding-top: 118px;
+        font-size: 26px;
+        line-height: 42px;
+    }
+
     @media screen and (min-width:1200px) {
         width: 696px;
         font-size: 44px;

@@ -34,7 +34,7 @@
 }
 
 .link__ftr {
-    
+    text-align: center;
     margin-top: 8px;
     display: block;
     font-style: normal;
@@ -162,7 +162,7 @@
     &:hover {
         border: 1px solid var(--hover-effect);
     }
-    @media screen and (max-width:1199px) {
+    @media screen and (min-width:480px) and (max-width:1199px) {
         width: 450px;
         margin: 0,15px;
     }

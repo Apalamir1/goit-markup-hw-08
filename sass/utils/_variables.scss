@@ -13,6 +13,9 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--main-color);
+    @media screen and (min-width:320px) and (max-width:479px) {
+        overflow-x: none;
+    }
 }
 
 a {

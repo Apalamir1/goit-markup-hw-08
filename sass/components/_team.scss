@@ -79,7 +79,7 @@
     justify-content: center;
     fill: var(--font-color);
     margin-top: 16px;
-    &.team__link__item+.team__link__item {
+    & .team__link__item + .team__link__item {
             margin-left: 10px;
         }
 }

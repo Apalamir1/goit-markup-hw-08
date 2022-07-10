@@ -2,10 +2,11 @@
     position: relative;
     display: flex;
     @media screen and (max-width:767px) {
+        flex-direction: column;
         height: 60px;
         
         justify-content: space-between;
-        align-items: center;
+        
     }
     @media screen and (min-width:768px) {
         height: 80px;
@@ -26,7 +27,7 @@
     @media screen and (max-width:767px) {      
     display: flex;
     flex-direction: column-reverse;
-    padding-top: 270px;
+    margin-top: 270px;
     
         
     }
@@ -181,8 +182,17 @@
         
 }
 .hdr__social{
-    @media screen and (max-width:767px) {
-        display: block;
+    @media screen and (min-width:320px) and (max-width:479px) {
+        flex-wrap: wrap;
+        padding-top: 32px;
+            display: flex;
+        & li{
+            margin-top: 10px;
+            
+        }
+    }
+    @media screen and (min-width:480px) and (max-width:767px) {
+        
         padding-top: 32px;
             display: flex;
             
@@ -202,5 +212,5 @@
 }
 .hrd__social-link{
     color: var(--focus-color);
-    padding: 0 10px;
+    margin: 0 10px;
 }    
